@@ -1,64 +1,153 @@
 <header class="banner">
-  <div class="container">
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <ul class="m-menu" >
-    <li><a href="#">Home</a></li>
-    <li>
-        <a href="#" class="dropdown-toggle">Overview</a>
-        <div class="m-menu-container" data-role="dropdown" data-no-close="true">
-            <div class="grid no-margin">
-                <div class="row cells5">
-                    <div class="cell padding10">
-                        <img src="images/me.jpg">
+  <div class="container-fluid">
+
+    <?php get_template_part('templates/header', 'pre'); ?>
+
+    <div class="row bg-dark">
+    	
+      <div class="col-md-12">
+
+        <div class="logo pull-left">
+          <img src="<?php echo get_template_directory_uri() . '/dist/images/logo-796x152.png'; ?>" width="180px" height="auto">
+        </div>
+        
+        <div class="main-menu">
+          <ul>
+            <li>
+              <a href="#" onclick="event.preventDefault();">What We Do</a>
+              <div class="child">
+                <ul class="simple-menu">
+                  <li><a href="">Accidents at Work</a>|</li>
+                  <li><a href="">Slips, Trips & Falls</a>|</li>
+                  <li><a href="">Road Traffic Accidents</a>|</li>
+                  <li><a href="">Other Accidents</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="event.preventDefault();">How It Works</a>
+              <div class="child">
+                <ul class="simple-menu">
+                  <li><a href="">Step 1</a>|</li>
+                  <li><a href="">Step 2</a>|</li>
+                  <li><a href="">Step 3</a>|</li>
+                  <li><a href="">Step 4</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="event.preventDefault();">Contact Us</a>
+              <div class="child">
+                
+                <div class="container extended">
+                  
+                  <div class="row">
+                    
+                    <div class="col-md-4">
+                      <strong>Address</strong><br><br>
+                      ROYALTY HOUSE<br>
+                      123 Street Rd<br>
+                      Watford<br>
+                      AB12 3YZ<br>
+                      United Kingdom
                     </div>
-                    <div class="cell colspan2">
-                        <h2 class="fg-white text-bold text-shadow">Metro UI CSS 3.0</h2>
-                        <p class="padding20 no-padding-top no-padding-left no-padding-bottom fg-white">
-                            Metro UI CSS a set of styles to create a site with an interface similar to Windows 8.
-                        </p>
-                        <p class="fg-white text-bold">
-                            Sergey Pimenov
-                        </p>
+                    <div class="col-md-4">
+                      <strong>Email:</strong><br>office@accidentadvicehelpline.co.uk<br><br>
+                      <strong>Telephone:</strong><br>01234 567 890<br><br>
+                      <strong>Fax:</strong><br>02312 321 212
                     </div>
-                    <div class="cell colspan2">
-                        <ul class="unstyled-list">
-                            <li><h3 class="text-shadow">Begin with Metro UI CSS</h3></li>
-                            <li><a class="fg-white" href="#">Requirements</a></li>
-                            <li><a class="fg-white" href="#">Doctype</a></li>
-                            <li><a class="fg-white" href="#">JavaScript</a></li>
-                            <li><a class="fg-white" href="#">Browsers support</a></li>
-                            <li><a class="fg-white" href="#">License</a></li>
-                        </ul>
+                    <div class="col-md-4">
+                      <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:250px;width:100%;'><div id='gmap_canvas' style='height:250px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">                 embed google maps             </a></small></div><div><small><a href="https://privacypolicygenerator.info">privacy policy example</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(51.653703,-0.3945099999999684),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.653703,-0.3945099999999684)});infowindow = new google.maps.InfoWindow({content:'<strong>Accident Advice Helpline</strong><br>Royalty House, 10 King Street Watford, Hertfordshire WD18 0BW<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
                     </div>
+
+                  </div>
+
                 </div>
-            </div>
+
+              </div>
+            </li>
+            <li class="calc-button">
+              <a href="#" onclick="event.preventDefault();"><i class="fa fa-angle-down" aria-hidden="true"></i> Claim Calculater</a>
+              <div class="child calculator">
+
+                <div class="container-fluid text-center">
+
+                  <span class="title">Find out in 30 seconds how much you could claim...</span><br><br>
+                
+                  <form>
+                    
+                    <fieldset class="form-group">
+                      <!-- <label for="name">Name</label> -->
+                      <input id="name" class="form-control" type="text" placeholder="Name" required>
+                    </fieldset>
+                    
+                    <fieldset class="form-group">
+                      <!-- <label for="email">Phone Number</label> -->
+                      <input id="phone" class="form-control" type="text" placeholder="Phone Number" required>
+                    </fieldset>
+                    
+                    <div class="clearfix radio-group">
+                      <span class="radio-title pull-left">Injured in the last 3 years?</span>
+                      <div class="btn-group pull-right" data-toggle="buttons">
+                        <label class="btn btn-primary active" for="yes-injured"><input id="yes-injured" type="radio" value="1" name="injured">Yes</label>
+                        <label class="btn btn-primary" for="no-injured"><input id="no-injured" type="radio" value="0" name="injured">No</label>
+                      </div>
+                    </div>
+                    
+                    <div class="clearfix radio-group">
+                      <span class="radio-title pull-left">Was the accident your fault?</span>
+                      <div class="btn-group pull-right" data-toggle="buttons">
+                        <label class="btn btn-primary" for="yes-fault"><input id="yes-fault" type="radio" value="1" name="fault">Yes</label>
+                        <label class="btn btn-primary active" for="no-fault"><input id="no-fault" type="radio" value="0" name="fault">No</label>
+                      </div>
+                    </div>
+
+                    <div class="clearfix radio-group">
+                      <span class="radio-title pull-left">Did you recieve medical attention?</span>
+                      <div class="btn-group pull-right" data-toggle="buttons">
+                        <label class="btn btn-primary active" for="yes-medical"><input id="yes-medical" type="radio" value="1" name="medical">Yes</label>
+                        <label class="btn btn-primary" for="no-medical"><input id="no-medical" type="radio" value="0" name="medical">No</label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <select class="form-control" id="sel1">
+                        <option>Where were you injured? (select one)</option>
+                        <option>Head</option>
+                        <option>Neck</option>
+                        <option>Shoulder</option>
+                        <option>Back</option>
+                        <option>Arm</option>
+                        <option>Elbow</option>
+                        <option>Wrist</option>
+                        <option>Hand</option>
+                        <option>Pelvis/Hip</option>
+                        <option>Knee</option>
+                        <option>Leg</option>
+                        <option>Hand</option>
+                      </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block btn-lg" style="border: 1px solid #348f34">Find out now</button>
+                  </form>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
         </div>
-    </li>
-    <li>
-        <a href="#" class="dropdown-toggle">Download</a>
-        <div class="m-menu-container" data-role="dropdown" data-no-close="true">
-            <ul class="inline-list">
-                <li><a href="#">Windows</a></li>
-                <li><a href="#">Office</a></li>
-                <li><a href="#">Skype</a></li>
-                <li><a href="#">Internet Explorer</a></li>
-                <li><a href="#">Visio</a></li>
-            </ul>
-        </div>
-    </li>
-    <li>
-        <a href="#" class="dropdown-toggle">Devices</a>
-        <div class="m-menu-container" data-role="dropdown">
-            <ul class="inline-list">
-                <li><a href="#">Surface</a></li>
-                <li><a href="#">Xbox</a></li>
-                <li><a href="#">PC & Tables</a></li>
-                <li><a href="#">Phones</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </div>
-    </li>
-    <li><a href="#">Support</a></li>
-    <li><a href="#">Store</a></li>
+
+      </div>
+
+    </div>
+
+    <div class="row feature-image">
+      
+      <div class="container-fluid testimonial">"You can rely on Accident Advice Helpline to look after you" - <b>Esther Rantzen</b></div>
+      
+    </div>
+
+  </div>
 </ul>
 </header>

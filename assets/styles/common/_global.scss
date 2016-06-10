@@ -1,2 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
-html { font-size: 22px; }
+html, body, h1, h2, h3, h4, h5, p, span {
+	font-family: 'Open sans', sans-serif;	
+}
+
+.bg-light {
+	background-color: $light-blue;
+	color: white;	
+}
+
+.bg-dark {
+	background-color: $dark-blue;
+	color: white;	
+}
+
+.color-light {
+	
+	color: $light-blue;
+
+}
+
+.color-dark {
+
+	color: $dark-blue;
+
+}
+
+.wrap {
+	min-height: 500px;	
+}
