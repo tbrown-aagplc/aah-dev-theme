@@ -143,8 +143,29 @@
     </div>
 
     <div class="row feature-image">
-      
-      <div class="container-fluid testimonial">"You can rely on Accident Advice Helpline to look after you" - <b>Esther Rantzen</b></div>
+
+
+    <div id="slider">
+        <img src="<?= get_template_directory_uri() . '/dist/images/header-photo.jpg'; ?>" alt="Minimum required attributes">
+        <img src="<?= get_template_directory_uri() . '/dist/images/header-photo2.jpeg'; ?>" alt="Minimum required attributes">
+        <img src="<?= get_template_directory_uri() . '/dist/images/header-photo.jpg'; ?>" alt="Minimum required attributes">
+        <img src="<?= get_template_directory_uri() . '/dist/images/header-photo2.jpeg'; ?>" alt="Minimum required attributes">
+    </div>
+    
+    <script>
+    jQuery(document).ready(function(){
+      var slider = new IdealImageSlider.Slider({
+          selector: '#slider',
+          height: 600, // Required but can be set by CSS
+          interval: 6000,
+          disableNav: false,
+          effect: 'fade',
+          transitionDuration: 1000
+      });
+    slider.start();
+    });
+    </script>     
+          
       
     </div>
 
