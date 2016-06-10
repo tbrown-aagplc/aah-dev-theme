@@ -218,24 +218,15 @@ header {
 
 	.feature-image {
 
-		background-image: url('../images/header-photo.jpg');
+		// background-image: url('../images/header-photo.jpg');
+		// height: 600px;
+		// background-size: cover;
+		// background-position: 50% 50%;
+		// position: relative;
+		// margin-top: 50px;
+
 		height: 600px;
-		background-size: cover;
-		background-position: 50% 50%;
-		position: relative;
-		margin-top: 50px;
 
-		@media screen and (max-width: 992px) {
-
-			height: 500px;
-
-		}
-
-		@media screen and (max-width: 768px) {
-
-			height: 400px;
-
-		}
 
 		.testimonial {
 
