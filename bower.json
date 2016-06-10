@@ -10,7 +10,8 @@
     "bootstrap-sass": "3.3.6",
     "font-awesome": "fontawesome#^4.6.3",
     "jquery-ui": "^1.11.4",
-    "jPushMenu": "^1.1.1"
+    "jPushMenu": "^1.1.1",
+    "jssor-slider": "^20.0.0"
   },
   "overrides": {
     "bootstrap-sass": {
