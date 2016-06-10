@@ -7,7 +7,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.6"
+    "bootstrap-sass": "3.3.6",
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery-ui": "^1.11.4",
+    "jPushMenu": "^1.1.1"
   },
   "overrides": {
     "bootstrap-sass": {

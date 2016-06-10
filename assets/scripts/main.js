@@ -19,6 +19,99 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+		
+		    var $regText = $('.regulation-text');
+
+        // Hide the regulation text
+      	$regText.find('span.text').hide();
+
+        // Show the button
+        $regText.find('.toggle').removeClass('hidden');
+
+      	$regText.find('.toggle a').toggle(function(){
+
+          // Change button text
+          $(this).html('Hide Regulation Text');
+
+          // Reveal regulation text
+      		$regText.find('span.text').slideDown();
+
+          // Scroll page to bottom
+          $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+
+          // Change arrow icon to up
+          $regText.find('.toggle i').removeClass('fa-arrow-circle-down').addClass('fa-arrow-circle-up');
+
+      	}, function() {
+
+          // Change button text
+          $(this).html('Show Regulation Text');
+
+          // Hide regulation text
+      		$regText.find('span.text').slideUp();
+
+          // Change arrow icon to down
+          $regText.find('.toggle i').removeClass('fa-arrow-circle-up').addClass('fa-arrow-circle-down');
+
+      	});
+
+        $('.main-menu li:not(.calc-button)').not('.main-menu li li').hover(function(){
+
+          $('.child').not('li.calc-button .child').stop().slideUp('fast');
+
+          $(this).find('.child').stop().slideDown({
+            duration: 'slow',
+            easing: 'easeOutCubic',
+            queue: false
+          });
+          $(this).find('.child').css('z-index', '2000');
+
+        }, function(){
+
+          var element = $(this).find('.child');
+          $(element).css('z-index', '1000');
+
+          $(element).delay(1000).queue(function(next) {
+
+            if(element.is(":hover")) {
+
+              next();
+
+            } else {
+
+              $(element).slideUp('fast');
+              next();
+
+            }
+
+          });
+          
+
+        });
+
+        $('.main-menu li.calc-button a').on('click', function(){
+
+          $(this).parent().toggleClass('open');
+          $(this).next('.child').slideToggle();
+
+        });
+
+        // STICKY HEADER
+
+        $(window).scroll(function() {
+
+          if ($(this).scrollTop() > 60){ 
+
+              $('header .bg-dark').addClass("sticky");
+
+            } else {
+
+              $('header .bg-dark').removeClass("sticky");
+
+            }
+        });
+
+		
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
