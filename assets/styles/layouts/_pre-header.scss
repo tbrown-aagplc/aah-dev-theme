@@ -3,9 +3,21 @@
 	padding-top: 15px;
 	padding-bottom: 15px;
 
+	@media screen and (max-width: 991px) {
+		padding-top: 5px;
+	}
+
 	.minor-menu {
 		font-size: 12px;	
 		padding-top: 5px;
+
+		@media screen and (max-width: 991px) {
+			text-align: center;
+		}
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
 
 		ul {
 
@@ -21,7 +33,7 @@
 				a {
 					color: #333333;
 					position: relative;
-					margin: 15px 5px;
+					margin: 10px 3px;
 
 					&:hover {
 
@@ -59,10 +71,21 @@
 		}
 		
 	}
+
+	.mobile-logo {
+
+		text-align: center;
+		padding: 19px 0;
+
+	}
 	
 	.main-phone-cta {
 		font-size: 24px;
 		line-height: 30px;
+
+		@media screen and (max-width: 991px) {
+			display: none;
+		}
 	}
 	
 }

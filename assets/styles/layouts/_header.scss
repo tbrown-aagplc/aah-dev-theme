@@ -15,12 +15,25 @@ header {
 		z-index: 5000;
 		top: 60px;
 
+		transition: margin-left 0.2s linear;
+-webkit-transition: margin-left 0.2s linear;
+-moz-transition: margin-left 0.2s linear;
+-o-transition: margin-left 0.2s linear;
+
+		@media screen and (max-width: 991px) {
+			top: 100px;
+		}
+
+		@media screen and (max-width: 767px) {
+			top: 80px;
+		}
+
 		&.sticky {
 
 			position: fixed;
 			top: 0px;
 
-			.child {
+			.main-menu .child {
 				background: rgba(26,153,205,1) !important;
 			}
 
@@ -33,6 +46,7 @@ header {
 
 		.col-md-12 {
 			padding-right: 0px !important;
+			padding-left: 0px !important;
 		}
 
 	}
@@ -43,6 +57,10 @@ header {
 		height: $header-height;
 		transform-style: preserve-3d;
 		transition: all 0.4s ease;
+
+		@media screen and (max-width: 991px) {
+			display: none;
+		}
 
 		img {
 			position: relative;
@@ -59,6 +77,10 @@ header {
 		padding: 0;
 		float: right;
 
+		@media screen and (max-width: 991px) {
+			float: none;
+		}
+
 		.calc-button {
 
 			background-color: #fa501e;
@@ -67,6 +89,14 @@ header {
 					-webkit-transition:All 0.5s ease-in-out;
 					-moz-transition:All 0.5s ease-in-out;
 					-o-transition:All 0.5s ease-in-out;
+
+			@media screen and (max-width: 991px) {
+				width: 40%;
+			}
+
+			@media screen and (max-width: 767px) {
+				width: 50%;
+			}
 
 			&.open {
 
@@ -91,6 +121,10 @@ header {
 
 				width: 200px;
 
+				@media screen and (max-width: 991px) {
+					width: auto;
+				}
+
 				i {
 					font-size: 25px;
 					top: 3px;
@@ -114,6 +148,14 @@ header {
 			float: left;
 			height: $header-height;
 
+			@media screen and (max-width: 991px) {
+				width: 20%;
+			}
+
+			@media screen and (max-width: 767px) {
+				width: 50%;
+			}
+
 			&>a {
 
 				display: block;
@@ -123,6 +165,11 @@ header {
 				color: #FFFFFF;
 				text-decoration: none;
 				text-align: center;
+
+				@media screen and (max-width: 991px) {
+					width: auto;
+
+				}
 
 			}
 
@@ -137,6 +184,7 @@ header {
 				display: none;
 				box-shadow: 0px 2px 10px rgba(0,0,0,0.2),
 				inset 0px 3px 5px 0px rgba(0,0,0,0.1);
+				clear: both;
 
 				ul.simple-menu {
 
@@ -150,6 +198,16 @@ header {
 						display:block;
 						float: left;
 
+						@media screen and (max-width: 767px) {
+							float: none;
+							width: 100%;
+							line-height: 70px;
+
+							.bar-seperator {
+								display: none;
+							}
+						}
+
 						a {
 
 							height: 22px;
@@ -159,6 +217,11 @@ header {
 							color: #FFF;
 							text-align: center;
 							text-decoration: none;
+
+							@media screen and (max-width: 991px) {
+								width: auto;
+								padding: 0 15px;
+							}
 
 							&:hover {
 
@@ -177,6 +240,10 @@ header {
 					padding-top: $child-height / 2;
 					padding-bottom: $child-height / 2;
 
+					@media screen and (max-width: 991px) {
+						height: auto !important;
+					}
+
 				}
 
 			}
@@ -189,6 +256,10 @@ header {
 					right: 0;
 					left: initial;
 					z-index: 2000;
+
+					@media screen and (max-width: 767px) {
+						width: 100%;
+					}
 
 					.title {
 
@@ -216,16 +287,102 @@ header {
 
 	}
 
+	#mobile-menu-button {
+		transition:All 0.5s ease-in-out;
+					-webkit-transition:All 0.5s ease-in-out;
+					-moz-transition:All 0.5s ease-in-out;
+					-o-transition:All 0.5s ease-in-out;
+		&:hover {
+			background-color: #163D5C;
+		}
+	}
+
+	.mobile-menu {
+
+		background-color: #006FA5;
+		position: fixed;
+		top: 0;
+		left: -250px;
+		bottom: 0;
+		padding: 0px;
+		width: 250px;
+		font-size: 12px;
+		overflow: hidden;
+
+		transition:All 0.2s linear;
+-webkit-transition:All 0.2s linear;
+-moz-transition:All 0.2s linear;
+-o-transition:All 0.2s linear;
+
+		ul {
+			padding: 0;
+			display: block;
+			overflow-y: scroll;
+			height: 100%;
+			margin-right: -17px;
+		}
+
+		ul ul {
+			overflow: auto;
+		}
+
+		a {
+			color: #FFF;
+		}
+
+		li {
+			margin-bottom: 10px;
+			list-style-type: none;
+			background-color: #006494;
+
+			a {
+				font-size: 22px;
+				font-style: italic;
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+			}
+		}
+
+		li li {
+			padding: 5px 15px;
+			background-color: #006FA5;
+			margin: 0;
+
+			a {
+				font-size: 12px;
+				font-style: normal;
+				padding: 4px 0px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+	}
+
 	.feature-image {
 
-		// background-image: url('../images/header-photo.jpg');
-		// height: 600px;
-		// background-size: cover;
-		// background-position: 50% 50%;
-		// position: relative;
-		// margin-top: 50px;
-
 		height: 600px;
+
+		@media screen and (max-width: 991px) {
+			height: 500px;
+		}
+
+		@media screen and (max-width: 767px) {
+			height: 400px;
+		}
+
+		#slider {
+			@media screen and (max-width: 991px) {
+				height: 500px !important;
+			}
+
+			@media screen and (max-width: 767px) {
+				height: 400px !important;
+			}
+		}
 
 
 		.testimonial {
@@ -242,6 +399,24 @@ header {
 			font-weight: 100;
 			text-align: center;
 		}
+
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.menuOpen {
+		
+		margin-left: 250px;
+
+		.mobile-menu {
+			left: 0px;
+		}
+
+		.sticky {
+		margin-left: 250px;
+	}
 
 	}
 

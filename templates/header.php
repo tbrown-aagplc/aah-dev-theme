@@ -13,29 +13,32 @@
         
         <div class="main-menu">
           <ul>
-            <li>
+            <li class="visible-xs">
+              <a href="#" id="mobile-menu-button" onclick="event.preventDefault();"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Open Menu</a>
+            </li>
+            <li class="hidden-xs">
               <a href="#" onclick="event.preventDefault();">What We Do</a>
               <div class="child">
                 <ul class="simple-menu">
-                  <li><a href="">Accidents at Work</a>|</li>
-                  <li><a href="">Slips, Trips & Falls</a>|</li>
-                  <li><a href="">Road Traffic Accidents</a>|</li>
+                  <li><a href="">Accidents at Work</a><span class="bar-seperator">|</span></li>
+                  <li><a href="">Slips, Trips & Falls</a><span class="bar-seperator">|</span></li>
+                  <li><a href="">Road Traffic Accidents</a><span class="bar-seperator">|</span></li>
                   <li><a href="">Other Accidents</a></li>
                 </ul>
               </div>
             </li>
-            <li>
+            <li class="hidden-xs">
               <a href="#" onclick="event.preventDefault();">How It Works</a>
               <div class="child">
                 <ul class="simple-menu">
-                  <li><a href="">Step 1</a>|</li>
-                  <li><a href="">Step 2</a>|</li>
-                  <li><a href="">Step 3</a>|</li>
+                  <li><a href="">Step 1</a><span class="bar-seperator">|</span></li>
+                  <li><a href="">Step 2</a><span class="bar-seperator">|</span></li>
+                  <li><a href="">Step 3</a><span class="bar-seperator">|</span></li>
                   <li><a href="">Step 4</a></li>
                 </ul>
               </div>
             </li>
-            <li>
+            <li class="hidden-xs">
               <a href="#" onclick="event.preventDefault();">Contact Us</a>
               <div class="child">
                 
@@ -131,6 +134,54 @@
                     <button type="submit" class="btn btn-success btn-block btn-lg" style="border: 1px solid #348f34">Find out now</button>
                   </form>
 
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mobile-menu visible-xs">
+          <ul>
+            <li>
+              <a href="#" onclick="event.preventDefault();">&nbsp;What We Do</a>
+              <div class="child">
+                <ul class="simple-menu">
+                  <li><a href="">Accidents at Work</a></li>
+                  <li><a href="">Slips, Trips & Falls</a></li>
+                  <li><a href="">Road Traffic Accidents</a></li>
+                  <li><a href="">Other Accidents</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="event.preventDefault();">&nbsp;How It Works</a>
+              <div class="child">
+                <ul class="simple-menu">
+                  <li><a href="">Step 1</a></li>
+                  <li><a href="">Step 2</a></li>
+                  <li><a href="">Step 3</a></li>
+                  <li><a href="">Step 4</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#" onclick="event.preventDefault();">&nbsp;Contact Us</a>
+              <div class="child">
+                <ul class="simple-menu">
+                  <li>
+                      <strong>Address</strong><br>
+                      ROYALTY HOUSE<br>
+                      123 Street Rd<br>
+                      Watford<br>
+                      AB12 3YZ<br>
+                      United Kingdom<br><br>
+
+                      <strong>Email:</strong><br>office@accidentadvicehelpline.co.uk<br><br>
+                      <strong>Telephone:</strong><br>01234 567 890<br><br>
+                      <strong>Fax:</strong><br>02312 321 212
+                    </li>
+                  </ul>
                 </div>
 
               </div>
