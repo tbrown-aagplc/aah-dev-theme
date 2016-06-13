@@ -1,0 +1,82 @@
+.mobile-menu {
+
+	background-color: $light-blue;
+	position: fixed;
+	top: 0;
+	left: -250px;
+	bottom: 0;
+	padding: 0px;
+	width: 250px;
+	font-size: 12px;
+	overflow: hidden;
+
+	transition:All 0.2s linear;
+	-webkit-transition:All 0.2s linear;
+	-moz-transition:All 0.2s linear;
+	-o-transition:All 0.2s linear;
+
+	ul {
+		padding: 0;
+		display: block;
+		overflow-y: scroll;
+		height: 100%;
+		margin-right: -17px;
+	}
+
+	ul ul {
+		overflow: auto;
+	}
+
+	a {
+		color: #FFF;
+	}
+
+	li {
+		margin-bottom: 10px;
+		list-style-type: none;
+		background-color: $light-blue - 15;
+
+		a {
+			font-size: 22px;
+			font-style: italic;
+			text-decoration: none;
+			display: block;
+			padding: 10px;
+		}
+	}
+
+	li li {
+		padding: 5px 15px;
+		background-color: $light-blue;
+		margin: 0;
+
+		a {
+			font-size: 12px;
+			font-style: normal;
+			padding: 4px 0px;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.menuOpen {
+
+		margin-left: 250px;
+
+		.mobile-menu {
+			left: 0px;
+		}
+
+		.sticky {
+			margin-left: 250px;
+		}
+
+	}
+
+}
