@@ -4,6 +4,21 @@ html, body, h1, h2, h3, h4, h5, p, span {
 	font-family: 'Open sans', sans-serif;	
 }
 
+body {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+
+	transition:All 0.2s linear;
+-webkit-transition:All 0.2s linear;
+-moz-transition:All 0.2s linear;
+-o-transition:All 0.2s linear;
+
+	@media screen and (min-width: 768px) {
+		margin-left: 0px !important;
+	}
+}
+
 .bg-light {
 	background-color: $light-blue;
 	color: white;	

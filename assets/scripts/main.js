@@ -57,7 +57,7 @@
 
         $('.main-menu li:not(.calc-button)').not('.main-menu li li').hover(function(){
 
-          $('.child').not('li.calc-button .child').stop().slideUp('fast');
+          $('.main-menu .child').not('li.calc-button .child').stop().slideUp('fast');
 
           $(this).find('.child').stop().slideDown({
             duration: 'slow',
@@ -109,6 +109,15 @@
               $('header .bg-dark').removeClass("sticky");
 
             }
+        });
+
+        // MOBILE MENU
+
+
+        $('#mobile-menu-button').toggle(function(){
+          $('body').addClass('menuOpen');
+        }, function(){
+          $('body').removeClass('menuOpen');
         });
 
 		
