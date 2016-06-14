@@ -91,6 +91,12 @@
 
         $('.main-menu li.calc-button a').on('click', function(){
 
+          if($(this).parent().hasClass('open')) {
+            $('#layerslider_1').layerSlider('start');
+          }else{
+            $('#layerslider_1').layerSlider('stop');
+          }
+
           $(this).parent().toggleClass('open');
           $(this).next('.child').slideToggle();
 
@@ -116,8 +122,14 @@
 
         $('#mobile-menu-button').toggle(function(){
           $('body').addClass('menuOpen');
+          $('#layerslider_1').layerSlider('stop');
+          $(this).html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Close Menu');
+          $(this).css({'text-align' : 'left', 'padding-left' : '15px'});
         }, function(){
           $('body').removeClass('menuOpen');
+          $('#layerslider_1').layerSlider('start');
+          $(this).html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Open Menu');
+          $(this).css({'text-align' : 'center', 'padding-left' : '0px'});
         });
 
 		

@@ -13,10 +13,10 @@
 
 		background-color: #fa501e;
 
-		transition:All 0.5s ease-in-out;
-		-webkit-transition:All 0.5s ease-in-out;
-		-moz-transition:All 0.5s ease-in-out;
-		-o-transition:All 0.5s ease-in-out;
+		transition:background-color 0.5s ease-in-out;
+		-webkit-transition:background-color 0.5s ease-in-out;
+		-moz-transition:background-color 0.5s ease-in-out;
+		-o-transition:background-color 0.5s ease-in-out;
 
 		@media screen and (max-width: 991px) {
 			width: 40%;
