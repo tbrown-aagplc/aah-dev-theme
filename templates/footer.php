@@ -1,4 +1,81 @@
 <footer class="content-info">
+
+    <div class="row bottom-form">
+
+        <div class="container text-center">
+
+            <span class="title">Find out in 30 seconds how much you could claim...</span><br><br>
+
+            <form>
+
+                <div class="col-md-6">
+
+                    <fieldset class="form-group">
+                        <!-- <label for="name">Name</label> -->
+                        <input id="name" class="form-control sync-name" type="text" placeholder="Name" required>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <!-- <label for="email">Phone Number</label> -->
+                        <input id="phone" class="form-control sync-phone" type="text" placeholder="Phone Number" required>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <select class="form-control sync-type" id="sel1">
+                            <option>Where were you injured? (select one)</option>
+                            <option>Head</option>
+                            <option>Neck</option>
+                            <option>Shoulder</option>
+                            <option>Back</option>
+                            <option>Arm</option>
+                            <option>Elbow</option>
+                            <option>Wrist</option>
+                            <option>Hand</option>
+                            <option>Pelvis/Hip</option>
+                            <option>Knee</option>
+                            <option>Leg</option>
+                            <option>Hand</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="clearfix radio-group">
+                        <span class="radio-title pull-left">Injured in the last 3 years?</span>
+                        <div class="btn-group pull-right" data-toggle="buttons">
+                            <label class="btn btn-primary active" for="yes-injured"><input id="yes-injured" type="radio" value="1" name="injured" class="sync-yearsB">Yes</label>
+                            <label class="btn btn-primary" for="no-injured"><input id="no-injured" type="radio" value="0" name="injured" class="sync-yearsB">No</label>
+                        </div>
+                    </div>
+
+                    <div class="clearfix radio-group">
+                        <span class="radio-title pull-left">Was the accident your fault?</span>
+                        <div class="btn-group pull-right" data-toggle="buttons">
+                            <label class="btn btn-primary" for="yes-fault"><input id="yes-fault" type="radio" value="1" name="fault">Yes</label>
+                            <label class="btn btn-primary active" for="no-fault"><input id="no-fault" type="radio" value="0" name="fault">No</label>
+                        </div>
+                    </div>
+
+                    <div class="clearfix radio-group">
+                        <span class="radio-title pull-left">Did you recieve medical attention?</span>
+                        <div class="btn-group pull-right" data-toggle="buttons">
+                            <label class="btn btn-primary active" for="yes-medical"><input id="yes-medical" type="radio" value="1" name="medical">Yes</label>
+                            <label class="btn btn-primary" for="no-medical"><input id="no-medical" type="radio" value="0" name="medical">No</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-block btn-lg" style="border: 1px solid #348f34">Find out now</button>
+
+                </div>
+                
+            </form>
+
+        </div>
+
+    </div>
+
   <div class="container-fluid">
     
     <div class="bg-light row text-center footer-banner">
@@ -9,7 +86,7 @@
     
     <div class="bg-dark row main-footer">
     
-    	<div class="container-fluid">
+    	<div class="container">
         
         	<div class="row">
             

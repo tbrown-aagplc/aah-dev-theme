@@ -26,17 +26,30 @@
 			width: 50%;
 		}
 
+		i {
+			transform: rotate(90deg) ;
+			-webkit-transform: rotate(90deg) ;
+			-moz-transform: rotate(90deg) ;
+			-o-transform: rotate(90deg) ;
+			-ms-transform: rotate(90deg) ;
+
+		}
+
 		&.open {
 
 			background-color: #e64313 !important;
 
 			i {
-				transform: rotate(180deg) ;
-				-webkit-transform: rotate(180deg) ;
-				-moz-transform: rotate(180deg) ;
-				-o-transform: rotate(180deg) ;
-				-ms-transform: rotate(180deg) ;
+				transform: rotate(-90deg) ;
+				-webkit-transform: rotate(-90deg) ;
+				-moz-transform: rotate(-90deg) ;
+				-o-transform: rotate(-90deg) ;
+				-ms-transform: rotate(-90deg) ;
 
+			}
+
+			.child {
+				right: 0;
 			}
 
 		}
@@ -179,14 +192,51 @@
 		.child.calculator {
 
 			width: 440px;
-			height: auto;
-			padding: 20px;
-			right: 0;
+			padding: 30px;
+			right: -450px;
 			left: initial;
 			z-index: 2000;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			background: rgba(26, 153, 205, 1); 
+			display: block;
+			@include transition(right 0.3s ease-in-out);
 
 			@media screen and (max-width: 767px) {
 				width: 100%;
+				padding: 9%;
+				overflow-y: scroll;
+				right: -100%;
+
+				.title {
+					font-size: 22px !important;
+				}
+
+				.radio-title {
+					display: block;
+					float: none !important;
+				}
+
+				.radio-group .btn-group {
+					float: none !important;
+					text-align: center;
+					padding-bottom: 10px;
+				}
+
+				i {
+					font-size: 30px;
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					opacity: 0.5;
+					cursor: pointer;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+
 			}
 
 			.title {

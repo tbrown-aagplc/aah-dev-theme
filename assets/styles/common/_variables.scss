@@ -13,3 +13,15 @@ $light-blue: 			#1a99cd;
 // Header
 $header-height: 70px;
 $child-height: 100px;
+
+// Easings
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// Mixins
+
+@mixin transition($args...) {
+	transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-o-transition: $args;
+}

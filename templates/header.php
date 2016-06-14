@@ -1,3 +1,4 @@
+<div class="mask"></div>
 <header class="banner">
     <div class="container-fluid">
 

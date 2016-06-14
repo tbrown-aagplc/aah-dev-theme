@@ -10,10 +10,7 @@
 	font-size: 12px;
 	overflow: hidden;
 
-	transition:All 0.2s linear;
-	-webkit-transition:All 0.2s linear;
-	-moz-transition:All 0.2s linear;
-	-o-transition:All 0.2s linear;
+	@include transition(left 0.3s ease-in-out);
 
 	ul {
 		padding: 0;
