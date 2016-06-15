@@ -1,7 +1,7 @@
 <div class="mobile-menu visible-xs">
 	<ul>
 		<li>
-			<a href="#" onclick="event.preventDefault();">&nbsp;What We Do</a>
+			<a href="<?php echo get_home_url(); ?>/what-we-do/">&nbsp;What We Do</a>
 			<div class="child">
 				<ul class="simple-menu">
 					<li><a href="">Accidents at Work</a></li>
@@ -12,7 +12,7 @@
 			</div>
 		</li>
 		<li>
-			<a href="#" onclick="event.preventDefault();">&nbsp;How It Works</a>
+			<a href="<?php echo get_home_url(); ?>/how-it-works/">&nbsp;How It Works</a>
 			<div class="child">
 				<ul class="simple-menu">
 					<li><a href="">Step 1</a></li>
@@ -23,7 +23,7 @@
 			</div>
 		</li>
 		<li>
-			<a href="#" onclick="event.preventDefault();">&nbsp;Contact Us</a>
+			<a href="<?php echo get_home_url(); ?>/contact-us/">&nbsp;Contact Us</a>
 			<div class="child">
 				<ul class="simple-menu">
 					<li>
