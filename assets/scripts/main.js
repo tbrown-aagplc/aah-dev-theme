@@ -88,6 +88,16 @@
 
         });
 
+        // DISABLE Y SCROLL ON WINDOW
+
+        var $body = $(document);
+        $body.bind('scroll', function() {
+            // "Disable" the horizontal scroll.
+            if ($body.scrollLeft() !== 0) {
+                $body.scrollLeft(0);
+            }
+        });
+
         // MAIN FORM
         $('.main-menu li.calc-button a').on('click', openForm); 
         $('.close-form').on('click', openForm);
