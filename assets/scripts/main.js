@@ -71,7 +71,7 @@
           var element = $(this).find('.child');
           $(element).css('z-index', '1000');
 
-          $(element).delay(1000).queue(function(next) {
+          $(element).delay(400).queue(function(next) {
 
             if(element.is(":hover")) {
 

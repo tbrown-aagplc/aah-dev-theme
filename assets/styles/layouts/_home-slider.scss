@@ -1,6 +1,12 @@
 .feature-image {
 
 	margin-top: 55px;
+	
+	@media screen and (max-width: 639px) {
+		opacity: 0;
+		height: 0px;
+		overflow: hidden;
+	}
 
 	.main-cta:hover {
 		background-color: #fd682e !important;
