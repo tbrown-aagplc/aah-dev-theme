@@ -85,25 +85,69 @@
             }
 
           });
-          
 
         });
 
-        $('.main-menu li.calc-button a').on('click', function(){
+        // DISABLE Y SCROLL ON WINDOW
 
-          if($(this).parent().hasClass('open')) {
+        var $body = $(document);
+        $body.bind('scroll', function() {
+            // "Disable" the horizontal scroll.
+            if ($body.scrollLeft() !== 0) {
+                $body.scrollLeft(0);
+            }
+        });
+
+        // MAIN FORM
+        $('.main-menu li.calc-button a').on('click', openForm); 
+        $('.close-form').on('click', openForm);
+
+        function openForm() {
+
+          if($('.calc-button a').parent().hasClass('open')) {
+
             $('#layerslider_1').layerSlider('start');
-          }else{
+            $('.mask').fadeOut();
+            $('#mobile-menu-button').on('click', openMobileMenu);
+
+          } else {
+
             $('#layerslider_1').layerSlider('stop');
+            $('.mask').fadeIn();
+            $('#mobile-menu-button').off('click');
+
           }
 
-          $(this).parent().toggleClass('open');
-          $(this).next('.child').slideToggle();
+          $('body').toggleClass('formOpen');
+          $('.calc-button a').parent().toggleClass('open');
 
-        });
+        }
+
+        // MOBILE MENU
+        $('#mobile-menu-button').on('click', openMobileMenu);
+
+
+        function openMobileMenu() {
+
+          if($('#mobile-menu-button').hasClass('open')) {
+
+            $('#layerslider_1').layerSlider('start');
+            $('#mobile-menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Open Menu');
+            $('.main-menu li.calc-button a').on('click', openForm);
+
+          } else {
+
+            $('#layerslider_1').layerSlider('stop');
+            $('#mobile-menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Close Menu');
+            $('.main-menu li.calc-button a').off('click');
+
+          }
+          $('#mobile-menu-button').toggleClass('open');
+          $('body').toggleClass('menuOpen');
+
+        }
 
         // STICKY HEADER
-
         $(window).scroll(function() {
 
           if ($(this).scrollTop() > 60){ 
@@ -117,20 +161,58 @@
             }
         });
 
-        // MOBILE MENU
+        // SYNC FORM ELEMENTS
+
+        formSync('sync-name');
+        formSync('sync-phone');
+        formSync('sync-type');
+        formSync('sync-yearsA', 'sync-yearsB');
+        formSync('sync-faultA', 'sync-faultB');
+        formSync('sync-medicalA', 'sync-medicalB');
 
 
-        $('#mobile-menu-button').toggle(function(){
-          $('body').addClass('menuOpen');
-          $('#layerslider_1').layerSlider('stop');
-          $(this).html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Close Menu');
-          $(this).css({'text-align' : 'left', 'padding-left' : '15px'});
-        }, function(){
-          $('body').removeClass('menuOpen');
-          $('#layerslider_1').layerSlider('start');
-          $(this).html('<i class="fa fa-bars" aria-hidden="true"></i>&nbsp;&nbsp;Open Menu');
-          $(this).css({'text-align' : 'center', 'padding-left' : '0px'});
-        });
+        // Links two inputs together on seperate forms
+        function formSync(elClass, elClass2) {
+
+          var element = $('.' + elClass);
+
+          // Set optional variable
+          if (typeof elClass2 === 'undefined') { 
+            elClass2 = 'default';
+          } else {
+            var element2 = $('.' + elClass2);
+          }
+
+          // Text inputs and select dropdowns
+          if(element.is('input[type=text]') || element.is('select')) {
+            element.change(function(){
+              element.val($(this).val());
+            });
+          } // Endif
+
+          // Radio Buttons
+          if(element.is('input[type=radio]')) {
+
+            element.change(function() {
+                var index = $(this).index(element);
+                switcher(index);
+            });
+
+            element2.change(function() {
+                var index = $(this).index(element2);
+                switcher(index);
+            });
+
+            function switcher(index) {
+              element.removeAttr('checked').parent().removeClass('active');
+              element2.removeAttr('checked').parent().removeClass('active');
+              $('.' + elClass + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
+              $('.' + elClass2 + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
+            }
+
+          } // Endif
+
+        } // Function formSync()
 
 		
       },

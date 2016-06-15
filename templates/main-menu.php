@@ -63,10 +63,12 @@
 		</li>
 		
 		<li class="calc-button">
-			<a href="#" onclick="event.preventDefault();"><i class="fa fa-angle-down" aria-hidden="true"></i> Claim Calculater</a>
+			<a href="#" onclick="event.preventDefault();"><i class="fa fa-angle-down" aria-hidden="true"></i> Claim Calculator</a>
 			<div class="child calculator">
 
 				<div class="container-fluid text-center">
+
+					<i class="fa fa-times visible-xs pull-right close-form" aria-hidden="true"></i>
 
 					<span class="title">Find out in 30 seconds how much you could claim...</span><br><br>
 
@@ -74,40 +76,52 @@
 
 						<fieldset class="form-group">
 							<!-- <label for="name">Name</label> -->
-							<input id="name" class="form-control" type="text" placeholder="Name" required>
+							<input id="name" class="form-control sync-name" type="text" placeholder="Name" required>
 						</fieldset>
 
 						<fieldset class="form-group">
 							<!-- <label for="email">Phone Number</label> -->
-							<input id="phone" class="form-control" type="text" placeholder="Phone Number" required>
+							<input id="phone" class="form-control sync-phone" type="text" placeholder="Phone Number" required>
 						</fieldset>
 
 						<div class="clearfix radio-group">
 							<span class="radio-title pull-left">Injured in the last 3 years?</span>
 							<div class="btn-group pull-right" data-toggle="buttons">
-								<label class="btn btn-primary active" for="yes-injured"><input id="yes-injured" type="radio" value="1" name="injured">Yes</label>
-								<label class="btn btn-primary" for="no-injured"><input id="no-injured" type="radio" value="0" name="injured">No</label>
+								<label class="btn btn-primary active" for="yes-injured">
+									<input id="yes-injured" type="radio" value="1" name="injured" class="sync-yearsA">Yes
+								</label>
+								<label class="btn btn-primary" for="no-injured">
+									<input id="no-injured" type="radio" value="0" name="injured" class="sync-yearsA">No
+								</label>
 							</div>
 						</div>
 
 						<div class="clearfix radio-group">
 							<span class="radio-title pull-left">Was the accident your fault?</span>
 							<div class="btn-group pull-right" data-toggle="buttons">
-								<label class="btn btn-primary" for="yes-fault"><input id="yes-fault" type="radio" value="1" name="fault">Yes</label>
-								<label class="btn btn-primary active" for="no-fault"><input id="no-fault" type="radio" value="0" name="fault">No</label>
+								<label class="btn btn-primary" for="yes-fault">
+									<input id="yes-fault" type="radio" value="1" name="fault" class="sync-faultA">Yes
+								</label>
+								<label class="btn btn-primary active" for="no-fault">
+									<input id="no-fault" type="radio" value="0" name="fault" class="sync-faultA">No
+								</label>
 							</div>
 						</div>
 
 						<div class="clearfix radio-group">
 							<span class="radio-title pull-left">Did you recieve medical attention?</span>
 							<div class="btn-group pull-right" data-toggle="buttons">
-								<label class="btn btn-primary active" for="yes-medical"><input id="yes-medical" type="radio" value="1" name="medical">Yes</label>
-								<label class="btn btn-primary" for="no-medical"><input id="no-medical" type="radio" value="0" name="medical">No</label>
+								<label class="btn btn-primary active" for="yes-medical">
+									<input id="yes-medical" type="radio" value="1" name="medical" class="sync-medicalA">Yes
+								</label>
+								<label class="btn btn-primary" for="no-medical">
+									<input id="no-medical" type="radio" value="0" name="medical" class="sync-medicalA">No
+									</label>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<select class="form-control" id="sel1">
+							<select class="form-control sync-type" id="sel1">
 								<option>Where were you injured? (select one)</option>
 								<option>Head</option>
 								<option>Neck</option>

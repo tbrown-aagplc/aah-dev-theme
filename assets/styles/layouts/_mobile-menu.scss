@@ -3,22 +3,20 @@
 	background-color: $light-blue;
 	position: fixed;
 	top: 0;
-	left: -250px;
+	left: -200px;
 	bottom: 0;
 	padding: 0px;
-	width: 250px;
+	width: 200px;
 	font-size: 12px;
 	overflow: hidden;
 
-	transition:All 0.2s linear;
-	-webkit-transition:All 0.2s linear;
-	-moz-transition:All 0.2s linear;
-	-o-transition:All 0.2s linear;
+	@include transition(left 0.3s ease-in-out);
 
 	ul {
 		padding: 0;
 		display: block;
 		overflow-y: scroll;
+		overflow-x: hidden;
 		height: 100%;
 		margin-right: -17px;
 	}
@@ -67,14 +65,14 @@
 
 	.menuOpen {
 
-		margin-left: 250px;
+		margin-left: 200px;
 
 		.mobile-menu {
 			left: 0px;
 		}
 
 		.sticky {
-			margin-left: 250px;
+			margin-left: 200px;
 		}
 
 	}
