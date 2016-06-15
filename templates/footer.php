@@ -43,28 +43,40 @@
                 <div class="col-md-6">
 
                     <div class="clearfix radio-group">
-                        <span class="radio-title pull-left">Injured in the last 3 years?</span>
-                        <div class="btn-group pull-right" data-toggle="buttons">
-                            <label class="btn btn-primary active" for="yes-injured"><input id="yes-injured" type="radio" value="1" name="injured" class="sync-yearsB">Yes</label>
-                            <label class="btn btn-primary" for="no-injured"><input id="no-injured" type="radio" value="0" name="injured" class="sync-yearsB">No</label>
+                            <span class="radio-title pull-left">Injured in the last 3 years?</span>
+                            <div class="btn-group pull-right" data-toggle="buttons">
+                                <label class="btn btn-primary active" for="yes-injured">
+                                    <input id="yes-injured" type="radio" value="1" name="injured" class="sync-yearsB">Yes
+                                </label>
+                                <label class="btn btn-primary" for="no-injured">
+                                    <input id="no-injured" type="radio" value="0" name="injured" class="sync-yearsB">No
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="clearfix radio-group">
-                        <span class="radio-title pull-left">Was the accident your fault?</span>
-                        <div class="btn-group pull-right" data-toggle="buttons">
-                            <label class="btn btn-primary" for="yes-fault"><input id="yes-fault" type="radio" value="1" name="fault">Yes</label>
-                            <label class="btn btn-primary active" for="no-fault"><input id="no-fault" type="radio" value="0" name="fault">No</label>
+                        <div class="clearfix radio-group">
+                            <span class="radio-title pull-left">Was the accident your fault?</span>
+                            <div class="btn-group pull-right" data-toggle="buttons">
+                                <label class="btn btn-primary" for="yes-fault">
+                                    <input id="yes-fault" type="radio" value="1" name="fault" class="sync-faultB">Yes
+                                </label>
+                                <label class="btn btn-primary active" for="no-fault">
+                                    <input id="no-fault" type="radio" value="0" name="fault" class="sync-faultB">No
+                                </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="clearfix radio-group">
-                        <span class="radio-title pull-left">Did you recieve medical attention?</span>
-                        <div class="btn-group pull-right" data-toggle="buttons">
-                            <label class="btn btn-primary active" for="yes-medical"><input id="yes-medical" type="radio" value="1" name="medical">Yes</label>
-                            <label class="btn btn-primary" for="no-medical"><input id="no-medical" type="radio" value="0" name="medical">No</label>
+                        <div class="clearfix radio-group">
+                            <span class="radio-title pull-left">Did you recieve medical attention?</span>
+                            <div class="btn-group pull-right" data-toggle="buttons">
+                                <label class="btn btn-primary active" for="yes-medical">
+                                    <input id="yes-medical" type="radio" value="1" name="medical" class="sync-medicalB">Yes
+                                </label>
+                                <label class="btn btn-primary" for="no-medical">
+                                    <input id="no-medical" type="radio" value="0" name="medical" class="sync-medicalB">No
+                                    </label>
+                            </div>
                         </div>
-                    </div>
 
                     <button type="submit" class="btn btn-success btn-block btn-lg" style="border: 1px solid #348f34">Find out now</button>
 

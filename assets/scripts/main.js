@@ -157,36 +157,52 @@
         formSync('sync-phone');
         formSync('sync-type');
         formSync('sync-yearsA', 'sync-yearsB');
+        formSync('sync-faultA', 'sync-faultB');
+        formSync('sync-medicalA', 'sync-medicalB');
 
-        function formSync(elClass, elClass2 = null) {
 
-          element = $('.' + elClass);
-          element2 = $('.' + elClass2);
+        // Links two inputs together on seperate forms
+        function formSync(elClass, elClass2) {
 
-          if(element.is('input[type=text]')) {
-            element.keyup(function(){
-              element.val($(this).val());
-            });
+          var element = $('.' + elClass);
+
+          // Set optional variable
+          if (typeof elClass2 === 'undefined') { 
+            elClass2 = 'default';
+          } else {
+            var element2 = $('.' + elClass2);
           }
 
-          if(element.is('select')) {
+          // Text inputs and select dropdowns
+          if(element.is('input[type=text]') || element.is('select')) {
             element.change(function(){
               element.val($(this).val());
             });
-          }
+          } // Endif
 
+          // Radio Buttons
           if(element.is('input[type=radio]')) {
 
             element.change(function() {
                 var index = $(this).index(element);
-                $(element2 + ':eq(' + index + ')').attr('checked','checked');
+                switcher(index);
             });
 
-          }
+            element2.change(function() {
+                var index = $(this).index(element2);
+                switcher(index);
+            });
 
+            function switcher(index) {
+              element.removeAttr('checked').parent().removeClass('active');
+              element2.removeAttr('checked').parent().removeClass('active');
+              $('.' + elClass + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
+              $('.' + elClass2 + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
+            }
 
+          } // Endif
 
-        }
+        } // Function formSync()
 
 		
       },

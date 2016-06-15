@@ -25,6 +25,7 @@ header {
 
 			position: fixed;
 			top: 0px;
+			@include transition(margin 0.3s ease-in-out);
 
 			.main-menu .child {
 				background: rgba(26,153,205,1) !important;
