@@ -98,10 +98,6 @@
             }
         });
 
-        // MAIN FORM
-        $('.main-menu li.calc-button a').on('click', openForm); 
-        $('.close-form').on('click', openForm);
-
         function openForm() {
 
           if($('.calc-button a').parent().hasClass('open')) {
@@ -123,9 +119,9 @@
 
         }
 
-        // MOBILE MENU
-        $('#mobile-menu-button').on('click', openMobileMenu);
-
+        // MAIN FORM
+        $('.main-menu li.calc-button a').on('click', openForm); 
+        $('.close-form').on('click', openForm);
 
         function openMobileMenu() {
 
@@ -147,6 +143,9 @@
 
         }
 
+        // MOBILE MENU
+        $('#mobile-menu-button').on('click', openMobileMenu);
+
         // STICKY HEADER
         $(window).scroll(function() {
 
@@ -161,26 +160,20 @@
             }
         });
 
-        // SYNC FORM ELEMENTS
-
-        formSync('sync-name');
-        formSync('sync-phone');
-        formSync('sync-type');
-        formSync('sync-yearsA', 'sync-yearsB');
-        formSync('sync-faultA', 'sync-faultB');
-        formSync('sync-medicalA', 'sync-medicalB');
-
-
         // Links two inputs together on seperate forms
         function formSync(elClass, elClass2) {
 
           var element = $('.' + elClass);
-
           // Set optional variable
           if (typeof elClass2 === 'undefined') { 
             elClass2 = 'default';
-          } else {
-            var element2 = $('.' + elClass2);
+          }
+
+          function switcher(index, element2) {
+            element.removeAttr('checked').parent().removeClass('active');
+            element2.removeAttr('checked').parent().removeClass('active');
+            $('.' + elClass + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
+            $('.' + elClass2 + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
           }
 
           // Text inputs and select dropdowns
@@ -193,6 +186,8 @@
           // Radio Buttons
           if(element.is('input[type=radio]')) {
 
+            var element2 = $('.' + elClass2);
+            
             element.change(function() {
                 var index = $(this).index(element);
                 switcher(index);
@@ -200,20 +195,21 @@
 
             element2.change(function() {
                 var index = $(this).index(element2);
-                switcher(index);
+                switcher(index, element2);
             });
-
-            function switcher(index) {
-              element.removeAttr('checked').parent().removeClass('active');
-              element2.removeAttr('checked').parent().removeClass('active');
-              $('.' + elClass + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
-              $('.' + elClass2 + ':eq(' + index + ')').attr('checked', true).parent().addClass('active');
-            }
 
           } // Endif
 
         } // Function formSync()
 
+        // SYNC FORM ELEMENTS
+
+        formSync('sync-name');
+        formSync('sync-phone');
+        formSync('sync-type');
+        formSync('sync-yearsA', 'sync-yearsB');
+        formSync('sync-faultA', 'sync-faultB');
+        formSync('sync-medicalA', 'sync-medicalB');
 		
       },
       finalize: function() {
