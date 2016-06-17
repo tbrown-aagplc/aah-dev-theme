@@ -190,7 +190,7 @@
             
             element.change(function() {
                 var index = $(this).index(element);
-                switcher(index);
+                switcher(index, element2);
             });
 
             element2.change(function() {
