@@ -52,3 +52,106 @@ body {
 	z-index: 1000;
 	display: none;
 }
+
+.aahbutton-3 {
+	overflow: hidden;
+	position: relative;
+
+	&.open {
+		cursor: default;
+		background-image: url('../images/lighterblue.gif');
+		background-position-x: -3000px;
+		background-position-y: 112px;
+		background-repeat: no-repeat;
+
+		&:hover {
+			background-color: $orange;
+		}
+	}
+	
+	input[type=text] {
+		display: block;
+		margin-top: 10px;
+		margin-left: 27px;
+		background-color: rgba(0,0,0,0);
+		color: #FFF;
+		border: 1px solid rgba(0,0,0,0);
+		-webkit-appearance: none;
+		outline: none;
+		font-size: 27px;
+		font-weight: 100;
+		width: 100%;
+		position: relative;
+
+		&::-webkit-input-placeholder {
+		   color: $light-blue + 55;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: $light-blue + 55;  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: $light-blue + 55;  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: $light-blue + 55;  
+		}
+	}
+	select {
+		width: 320px;
+		position: relative;
+		height: 45px !important;
+		margin-top: 10px;
+		line-height: 45px;
+		-webkit-appearance: menulist-button;
+		color: #FFF;
+		font-weight: 400;
+		margin-left: 27px;
+		background-color: $light-blue;
+		border-color: $light-blue + 20;
+
+		option {
+			font-size: 17px;
+			line-height: 17px;
+			color: #333;
+		}
+	}
+
+	.butons {
+		margin-left: 27px;
+		margin-top: 15px;
+	}
+
+	.text {
+		font-size: 15px;
+		line-height: 30px;
+		font-weight: 100;
+		margin-left: 27px;
+	}
+
+	.continue-button {
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		height: 50px;
+		margin-top: -25px;
+		width: 200px;
+		display: block;
+		background-color: #5cb85c + 15;
+		color: #FFF;
+		border-radius: 5px;
+		line-height: 50px;
+		text-align: center;
+		text-decoration: none;
+		font-weight: 100;
+		cursor: pointer;
+		z-index: 1000;
+
+		&:hover {
+			background-color: #5cb85c;
+		}
+	}
+	
+}
