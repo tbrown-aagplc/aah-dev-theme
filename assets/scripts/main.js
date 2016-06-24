@@ -205,8 +205,6 @@
 
         // SYNC FORM ELEMENTS
 
-        
-
         var htmlInlineForm = '<div class="inline-form">' +
             '<form>' +
                 '<div class="col-md-6">' +
@@ -563,7 +561,29 @@
 
         });
 
-     
+
+        formSync('sync-name');
+        formSync('sync-phone');
+        formSync('sync-type');
+        formSync('sync-yearsA', 'sync-yearsB');
+        formSync('sync-faultA', 'sync-faultB');
+        formSync('sync-medicalA', 'sync-medicalB');
+
+        $('.googlemaps').on('click', function () {
+          console.log('Ifrmae Clicked');
+          $('.googlemaps iframe').css({"pointer-events" : "auto"});
+          $(this).css("box-shadow", "0px 3px 5px rgba(0,0,0,0.4)");
+        });
+
+
+        $(window).on('scroll', function(){
+          var ishovered = $('.googlemaps:hover').length;
+          if(!ishovered) {
+            $('.googlemaps iframe').css("pointer-events", "none");
+            $('.googlemaps').css("box-shadow", "0px 0px 5px rgba(0,0,0,0)");
+          }
+        });
+
 		
       },
       finalize: function() {

@@ -23,5 +23,17 @@
         <?php if(is_front_page()) { ?>
         <?php get_template_part('templates/home', 'slider'); ?>
         <?php } // is_home() ?>
+
+        <?php if(!is_front_page() && (is_page() || is_single())) { ?>
+            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            <div class="row">
+                <div class="rich-page-header<?php echo ($image[0] ? ' darken' : '' ); ?>" style="background-image: url('<?php echo $image[0]; ?>')">
+                    <h1><?php the_title(); ?></h1>
+                </div>
+            </div>
+        <?php } ?>
+
+
+
     </div>
 </header>

@@ -12,7 +12,7 @@
 				<ul class="simple-menu">
 					<li><a href="">Accidents at Work</a><span class="bar-seperator">|</span></li>
 					<li><a href="">Slips, Trips &amp; Falls</a><span class="bar-seperator">|</span></li>
-					<li><a href="">Road Traffic Accidents</a><span class="bar-seperator">|</span></li>
+					<li><a href="<?php echo get_home_url(); ?>/road-traffic-accidents/">Road Traffic Accidents</a><span class="bar-seperator">|</span></li>
 					<li><a href="">Other Accidents</a></li>
 				</ul>
 			</div>
@@ -41,18 +41,18 @@
 						<div class="col-md-4">
 							<strong>Address</strong><br><br>
 							ROYALTY HOUSE<br>
-							123 Street Rd<br>
+							10 King Street<br>
 							Watford<br>
-							AB12 3YZ<br>
+							WD18 0BW<br>
 							United Kingdom
 						</div>
 						<div class="col-md-4">
 							<strong>Email:</strong><br>office@accidentadvicehelpline.co.uk<br><br>
 							<strong>Telephone:</strong><br>01234 567 890<br><br>
-							<strong>Fax:</strong><br>02312 321 212
+							<strong>Fax:</strong><br>02312 321 212<br><br>
 						</div>
 						<div class="col-md-4">
-							<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:250px;width:100%;'><div id='gmap_canvas' style='height:250px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">                 embed google maps             </a></small></div><div><small><a href="https://privacypolicygenerator.info">privacy policy example</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(51.653703,-0.3945099999999684),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.653703,-0.3945099999999684)});infowindow = new google.maps.InfoWindow({content:'<strong>Accident Advice Helpline</strong><br>Royalty House, 10 King Street Watford, Hertfordshire WD18 0BW<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+							<div class="googlemaps"><?php echo do_shortcode('[su_gmap address="Accident Advice Helpline, 10 Kind Street, Watford, WD18 0BW"]'); ?></div>
 						</div>
 
 					</div>
