@@ -1,7 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,700,800,300,200);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Francois+One);
 
-html, body, h1, h2, h3, h4, h5, p, span {
+html, body, p, span {
 	font-family: 'Open sans', sans-serif;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Francois One', sans-serif;
 }
 
 body {
@@ -52,3 +59,34 @@ body {
 	z-index: 1000;
 	display: none;
 }
+
+/* TEMPORARY - 24/06/2016 */
+
+.home.page .su-post {
+	width: 29%;
+	height: 350px;
+	overflow: hidden;
+	display: block;
+	float: left;
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 2%;
+	border: 1px solid #E6E6E6;
+
+	p {
+		font-size: 14px;
+	}
+	
+	@media screen and (max-width: 991px) {
+		width: auto;
+		margin: 20px 10px;
+		height: auto;
+	}
+
+	h2 {
+		font-size: 22px;
+		line-height: 30px;
+	}
+}
+
+/* END TEMPOARY */

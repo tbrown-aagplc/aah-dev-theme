@@ -7,14 +7,14 @@
         <li><a href="#">Our Experts</a>|</li>
         <li><a href="#">Testimonials</a>|</li>
         <li><a href="#">Reviews</a>|</li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="<?php echo get_home_url(); ?>/blog/">Blog</a></li>
       </ul>
     </div>
 
     <div class="mobile-logo visible-sm visible-xs col-sm-12"> <img src="<?php echo get_template_directory_uri() . '/dist/images/logo-mobile-796x152.png'; ?>" width="180px" height="auto"></div>
     
     <div class="col-md-7 col-sm-12 main-phone-cta text-right">
-    	Need help? Call us <b>FREE</b> on <span class="phone color-light"><i class="fa fa-phone" aria-hidden="true"></i> <b>0800 6890 500</b></span>
+    	<a href="tel:08006890500"><span class="hidden-xs">Need help? </span>Call us <b>FREE</b> on <span class="phone color-light"><i class="fa fa-phone" aria-hidden="true"></i> <b>0800 6890 500</b></span></a>
     </div>
     
 </div>
