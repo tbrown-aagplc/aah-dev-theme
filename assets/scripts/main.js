@@ -478,7 +478,7 @@
                 that.animate({'background-position-x' : partWidth, 'background-position-y' : '240px', 'height' : '250px'}, 600);
 
                 that.find('select').remove();
-                that.find('span').text('Please review your information, click submit if everything looks right...');
+                that.find('span').text('Please review your information and click Submit Claim...');
                 var html = '<div class="text">';
                 html += 'Name: <b>' + localStorage.getItem('claim-name') + '</b><br>';
                 html += 'Phone: <b>' + localStorage.getItem('claim-phone') + '</b><br>';
