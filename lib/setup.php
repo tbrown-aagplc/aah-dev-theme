@@ -114,3 +114,17 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+/**
+ * Add the AAH Button Shortcode 
+ */
+function aah_button_func($atts, $content = null) {
+
+  $a = shortcode_atts( array(
+      'type' => 1
+  ), $atts );
+
+  return '<a onclick="event.preventDefault()" class="aahbutton aahbutton-' . $a['type'] . '" href="#">' . $content . '</a>';
+
+}
+add_shortcode( 'aahbutton',  __NAMESPACE__ . '\\aah_button_func' );

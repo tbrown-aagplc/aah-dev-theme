@@ -68,7 +68,7 @@
 
 				<div class="container-fluid text-center">
 
-					<i class="fa fa-times visible-xs pull-right close-form" aria-hidden="true"></i>
+					<i class="fa fa-times pull-right close-form" aria-hidden="true"></i>
 
 					<span class="title">Find out in 30 seconds how much you could claim...</span><br><br>
 

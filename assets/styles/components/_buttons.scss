@@ -4,3 +4,52 @@
 	border-color: #348f34 !important;
 
 }
+
+.aahbutton {
+	padding: 15px;
+	background-color: $orange;
+	color: white;
+	border-radius: 5px;
+	text-decoration: none;
+	margin: 10px 0 0 0;
+	display: inline-block;
+	white-space: nowrap;
+	position: relative;
+	@include transition(border-radius 500ms linear);
+	z-index: 20;
+
+	&:hover, &:active, &:focus {
+		background-color: $orange + 15;
+		color: white;
+		text-decoration: none;
+	}
+
+	&.aahbutton-1:before {
+		font-family: FontAwesome;
+   		content: "\f100";
+   		padding-right: 10px;
+	}
+
+	&.aahbutton-2:before {
+		font-family: FontAwesome;
+   		content: "\f0fe";
+   		padding-right: 10px;
+	}
+
+	&.aahbutton-2.open:before {
+		font-family: FontAwesome;
+   		content: "\f146";
+   		padding-right: 10px;
+	}
+
+	&.aahbutton-2.open {
+		border-radius: 5px 5px 0 0;
+	}
+
+	&.aahbutton-3:before {
+		font-family: FontAwesome;
+   		content: "\f144";
+   		padding-right: 10px;
+	}
+
+}
